@@ -233,35 +233,41 @@ For correct work of the software, you must install [s3fs](https://github.com/s3f
 
 ## Install nxs-backup
 
-### Debian
+### Debian/Ubuntu
 
-1.  Add Nixys repository key:
-
-    ```
-    apt-key adv --fetch-keys http://packages.nixys.ru/debian/repository.gpg.key
-    ```
-
-2.  Add the repository. Currently Debian wheezy, jessie and stretch are available:
+1. Install dependency packages:
 
     ```
-    echo "deb [arch=amd64] http://packages.nixys.ru/debian/ wheezy main" > /etc/apt/sources.list.d/packages.nixys.ru.list
+    apt install dirmngr gnupg apt-transport-https ca-certificates
+    ```
+
+2.  Add Nixys repository key:
+
+    ```
+    apt-key adv --fetch-keys https://repository.nixys.ru/repository/gpg/public.gpg.key
+    ```
+
+3.  Add the repository. Currently Debian stretch, buster and bullseye are available(and similar versions of Ubuntu):
+
+    ```
+    echo "deb [arch=amd64] https://repository.nixys.ru/repository/deb-stretch/ stretch main" > /etc/apt/sources.list.d/repository.nixys.ru.list
     ```
 
     ```
-    echo "deb [arch=amd64] http://packages.nixys.ru/debian/ jessie main" > /etc/apt/sources.list.d/packages.nixys.ru.list
+    echo "deb [arch=amd64] https://repository.nixys.ru/repository/deb-bullseye/ bullseye main" > /etc/apt/sources.list.d/repository.nixys.ru.list
     ```
 
     ```
-    echo "deb [arch=amd64] http://packages.nixys.ru/debian/ stretch main" > /etc/apt/sources.list.d/packages.nixys.ru.list
+    echo "deb [arch=amd64] https://repository.nixys.ru/repository/deb-buster/ buster main" > /etc/apt/sources.list.d/repository.nixys.ru.list
     ```
 
-3.  Make an update:
+4.  Make an update:
 
     ```
     apt-get update
     ```
 
-4.  Install nxs-backup:
+5.  Install nxs-backup:
 
     ```
     apt-get install nxs-backup
@@ -272,19 +278,19 @@ For correct work of the software, you must install [s3fs](https://github.com/s3f
 1.  Add Nixys repository key:
 
     ```
-    rpm --import http://packages.nixys.ru/centos/repository.gpg.key
+    rpm --import https://repository.nixys.ru/repository/gpg/public.gpg.key
     ```
 
 2.  Add the repository. Currently CentOS 6 and 7 are available:
 
     ```
-    cat <<EOF > /etc/yum.repos.d/packages.nixys.ru.repo
-    [packages.nixys.ru]
-    name=Nixys Packages for CentOS \$releasever - \$basearch
-    baseurl=http://packages.nixys.ru/centos/\$releasever/\$basearch
+    cat << EOF > /etc/yum.repos.d/repository.nixys.ru.repo
+    [repository.nixys.ru]
+    name=Nixys Packages for CentOS 
+    baseurl=http://repository.nixys.ru/repository/centos-7/
     enabled=1
     gpgcheck=1
-    gpgkey=http://packages.nixys.ru/centos/repository.gpg.key
+    gpgkey=https://repository.nixys.ru/repository/gpg/public.gpg.key
     EOF
     ```
 
