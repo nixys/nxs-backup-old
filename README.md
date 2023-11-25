@@ -1,5 +1,11 @@
 # Nxs-backup
 
+## ⚠️ Deprecation and Archive Notice
+
+This project is deprecated. Instead ot this new versions of `nxs-backup` available [here](https://github.com/nixys/nxs-backup).
+
+## Getting started
+
 Nxs-backup is an open source backup software for most popular GNU/Linux distributions. Features of Nxs-backup include amongst others:
 * Support of the most popular storages: local, ssh, ftp, cifs(smb), nfs, webdav, s3
 * Database backups, such as MySQL(logical/physical), PostgreSQL(logical/physical), MongoDB, Redis
@@ -11,9 +17,8 @@ Nxs-backup is an open source backup software for most popular GNU/Linux distribu
 * Possibility to restore backups with standard tools (no extra software including Nxs-backup is required)
 * Email notifications about status and errors during backup process
 
-The source code of Nxs-backup is available at https://github.com/nixys/nxs-backup/ under the GPL v3 license. Additionally Nxs-backup offers binary package repositories for the major Linux distributions (Debian, CentOS).
+The source code of Nxs-backup is available at https://github.com/nixys/nxs-backup-old/ under the GPL v3 license. Additionally Nxs-backup offers binary package repositories for the major Linux distributions (Debian, CentOS).
 
-## Getting started
 
 ### Understanding Jobs, Type, Sources and Storages
  In order to make nxs-backup as ﬂexible as possible, the directions given to nxs-backup are speciﬁed in several pieces. The main instruction is the job resource, which deﬁnes a job. A backup job generally consists of a Type, a Sources and Storages. 
